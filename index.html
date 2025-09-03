@@ -1,0 +1,291 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RCB Champions 2025 • 18 Years of Data (2008–2025)</title>
+  <meta name="description" content="A celebratory single-page site for RCB Champions 2025 with a clean, printable record of all 18 seasons (2008–2025)." />
+  <style>
+    :root{
+      --bg: #0b0f1a;/* deep navy */
+      --card: #111827;/* slate-900 */
+      --muted: #94a3b8;/* slate-400 */
+      --text: #e5e7eb;/* gray-200 */
+      --accent: #ef4444;/* red-500 */
+      --accent-2:#f59e0b;/* amber-500 */
+      --ring: #22d3ee;/* cyan-400 */
+    }
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0f1a 0%,#0b0f1a 40%,#0f172a 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";}
+    .container{max-width:1200px;margin:0 auto;padding:24px;}
+
+    header{
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:48px 24px;
+      background:url('images/_AIL8656.jpg') center/cover no-repeat;
+      color:white;
+    }
+    header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.85));
+      z-index:0;
+    }
+    header > *{position:relative;z-index:1}
+
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.15);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted);backdrop-filter:blur(8px)}
+    .title{font-size: clamp(28px, 4vw, 52px);line-height:1.05;margin:10px 0 8px;font-weight:800;letter-spacing:.3px}
+    .subtitle{color:#d1d5db;font-size:clamp(14px,1.6vw,18px);max-width:900px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{appearance:none;border:0;border-radius:14px;padding:12px 16px;font-weight:600;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+    .btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .grid{display:grid;gap:18px;margin-top:24px}
+    @media(min-width:900px){.grid{grid-template-columns:2fr 1fr}}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.25);overflow:hidden}
+    .card h3{margin:0;padding:18px 18px 0}
+    .card .card-body{padding:18px}
+
+    /* Toolbar */
+    .toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .toolbar input,.toolbar select{background:#0f172a;border:1px solid rgba(255,255,255,.12);color:var(--text);padding:10px 12px;border-radius:10px;outline:none}
+    .toolbar input:focus,.toolbar select:focus{box-shadow:0 0 0 3px rgba(34,211,238,.35)}
+    .toolbar .spacer{flex:1}
+
+    /* Table */
+    table{width:100%;border-collapse:collapse}
+    thead th{position:sticky;top:0;background:#0f172a;padding:12px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px;color:#cbd5e1}
+    tbody td{padding:12px 10px;border-bottom:1px dashed rgba(255,255,255,.08);font-size:14px}
+    tbody tr:hover{background:rgba(255,255,255,.03)}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.15);font-size:12px}
+    .tag.champ{border-color:rgba(34,197,94,.45);background:rgba(34,197,94,.15)}
+    .muted{color:var(--muted)}
+
+    /* Confetti (tiny, subtle) */
+    .confetti{pointer-events:none;position:absolute;inset:0;overflow:hidden}
+    .confetti span{position:absolute;width:6px;height:14px;background:linear-gradient(180deg,var(--accent),var(--accent-2));top:-20px;left:var(--x);opacity:.8;border-radius:2px;animation:fall var(--d) linear infinite;animation-delay:var(--delay)}
+    .confetti span:nth-child(2n){background:linear-gradient(180deg,#22d3ee,#10b981)}
+    .confetti span:nth-child(3n){background:linear-gradient(180deg,#f472b6,#a78bfa)}
+    @keyframes fall{to{transform:translateY(140vh) rotate(180deg)}}
+
+    /* Footer */
+    footer{color:var(--muted);text-align:center;padding:32px 0;font-size:13px}
+
+    /* Print */
+    @media print{header .cta,.toolbar .export,.toolbar .import{display:none}.card{box-shadow:none}body{background:white;color:#111827}header{background:white;border:0;min-height:auto}.title{color:#111827}.subtitle{color:#334155}thead th{background:#f8fafc;color:#0f172a}tbody tr:hover{background:transparent}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header aria-label="Hero">
+      <div class="badge" aria-label="Badge: Champions 2025">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L12 14.77 7.22 16.7l.91-5.32L4.27 7.62l5.34-.78L12 2z" stroke="currentColor" stroke-width="1.2"/>
+        </svg> 
+        RCB • Champions 2025
+      </div>
+
+      <h1 class="title">Royal Challengers Bengaluru — Champions 2025</h1>
+      <p class="subtitle">A clean, printable record of every season from <strong>2008</strong> to <strong>2025</strong>. Use the toolbar to search, filter, and export.</p>
+
+      <div class="cta">
+        <button class="btn btn-primary" id="scrollToTable">View 18-Year Record</button>
+        <button class="btn btn-ghost" id="printPage" title="Print or Save as PDF">Print / Save PDF</button>
+      </div>
+
+      <div class="confetti" aria-hidden="true" id="confetti"></div>
+    </header>
+
+    <section class="grid" id="records">
+      <div class="card" role="region" aria-labelledby="season-records-title">
+        <h3 id="season-records-title">Season Records (2008–2025)</h3>
+        <div class="card-body">
+          <div class="toolbar" style="margin-bottom:12px">
+            <input id="search" type="search" placeholder="Search year, captain, notes…" aria-label="Search" />
+            <select id="resultFilter" aria-label="Filter by result">
+              <option value="">All Results</option>
+              <option>Champions</option>
+              <option>Runners-up</option>
+              <option>Playoffs</option>
+              <option>League Stage</option>
+            </select>
+            <div class="spacer"></div>
+            <button class="btn btn-ghost import" id="importJson" title="Import JSON data">Import JSON</button>
+            <button class="btn btn-ghost export" id="exportJson" title="Export JSON data">Export JSON</button>
+            <button class="btn btn-ghost export" id="exportCSV" title="Export CSV">Export CSV</button>
+          </div>
+          <div style="max-height:520px;overflow:auto;border:1px solid rgba(255,255,255,.08);border-radius:14px">
+            <table id="table" aria-describedby="season-records-title">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Result</th>
+                  <th>Position</th>
+                  <th>Captain(s)</th>
+                  <th>Coach</th>
+                  <th>Matches</th>
+                  <th>W-L-NR</th>
+                  <th>Points</th>
+                  <th>Top Run Scorer (Team)</th>
+                  <th>Top Wicket Taker (Team)</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card" role="complementary" aria-labelledby="side-title">
+        <h3 id="side-title">2025 Snapshot</h3>
+        <div class="card-body">
+          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px">
+            <li><strong>Season:</strong> IPL 2025</li>
+            <li><strong>Trophy:</strong> <span class="tag champ">Champions</span></li>
+            <li><strong>Home:</strong> M. Chinnaswamy Stadium</li>
+            <li><strong>Theme:</strong> “Ee Sala Cup Namde” — Achieved ✅</li>
+            <li><strong>RCB ❤️ </strong>
+              <ul style="list-style:none;padding:0;margin:4px 0 0 0;display:flex;gap:8px;flex-wrap:wrap">
+                <li>🏆 First IPL title after 18 years</li>
+                <li>👑 Rajat Patidar — First captain to win IPL for RCB</li>
+                <li>🔥 Virat Kohli — Top run scorer (657 runs)</li>
+                <li>🎯 Josh Hazlewood — Top wicket taker (22 wickets)</li>
+                <li>🎉 Krunal Pandya — Consistent all-rounder</li>
+                <li>🤝 Team effort, stellar coaching by Andy Flower</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      Built for fans. Static, fast, and printer-friendly. ✨
+    </footer>
+  </div>
+
+  <script>
+    // ------- Minimal confetti -------
+    (function(){
+      const root = document.getElementById('confetti');
+      const COUNT = 80;
+      for(let i=0;i<COUNT;i++){
+        const s=document.createElement('span');
+        s.style.setProperty('--x', Math.random()*100+'%');
+        s.style.setProperty('--d', (6+Math.random()*6)+'s');
+        s.style.setProperty('--delay', (-Math.random()*6)+'s');
+        root.appendChild(s);
+      }
+    })();
+
+    // ------- Data (18 seasons: 2008–2025). -------
+    const baseData = [
+      {year:2008,result:'League Stage',position:'7',captain:'Rahul Dravid',coach:'Venkatesh Prasad',matches:'14',wl:'4-10-0',points:'8',topRuns:'Rahul Dravid (371)',topWkts:'Zaheer Khan (13)',notes:'Inaugural season'},
+      {year:2009,result:'Runners-up',position:'2',captain:'Anil Kumble',coach:'Ray Jennings',matches:'16',wl:'9-7-0',points:'18',topRuns:'Jacques Kallis (361)',topWkts:'Anil Kumble (21)',notes:'Lost Final to Deccan Chargers'},
+      {year:2010,result:'Playoffs (Third Place)',position:'3',captain:'Anil Kumble',coach:'Ray Jennings',matches:'16',wl:'7-9-0',points:'16',topRuns:'Jacques Kallis (572)',topWkts:'Anil Kumble (17)',notes:'Eliminated in semi-finals'},
+      {year:2011,result:'Runners-up',position:'2',captain:'Daniel Vettori',coach:'Ray Jennings',matches:'16',wl:'10-5-1',points:'21',topRuns:'Chris Gayle (608)',topWkts:'Sreenath Aravind (21)',notes:'Lost final to CSK'},
+      {year:2012,result:'League Stage',position:'5',captain:'Daniel Vettori / Virat Kohli',coach:'Ray Jennings',matches:'16',wl:'8-7-1',points:'17',topRuns:'Chris Gayle (733)',topWkts:'Vinay Kumar (19)',notes:''},
+      {year:2013,result:'League Stage',position:'5',captain:'Virat Kohli',coach:'Ray Jennings',matches:'16',wl:'9-7-0',points:'19',topRuns:'Chris Gayle (708)',topWkts:'Vinay Kumar (23)',notes:''},
+      {year:2014,result:'League Stage',position:'7',captain:'Virat Kohli',coach:'Daniel Vettori',matches:'14',wl:'5-9-0',points:'10',topRuns:'AB de Villiers (395)',topWkts:'Varun Aaron (16)',notes:''},
+      {year:2015,result:'Playoffs (Third Place)',position:'3',captain:'Virat Kohli',coach:'Daniel Vettori',matches:'16',wl:'8-7-1',points:'18',topRuns:'AB de Villiers (513)',topWkts:'Yuzvendra Chahal (23)',notes:'Eliminated in playoffs'},
+      {year:2016,result:'Runners-up',position:'2',captain:'Virat Kohli',coach:'Daniel Vettori',matches:'16',wl:'9-7-0',points:'18',topRuns:'Virat Kohli (973)',topWkts:'Yuzvendra Chahal (21)',notes:'Lost final to SRH'},
+      {year:2017,result:'League Stage',position:'8',captain:'Virat Kohli',coach:'Daniel Vettori',matches:'14',wl:'3-10-1',points:'7',topRuns:'Virat Kohli (308)',topWkts:'Pawan Negi (16)',notes:''},
+      {year:2018,result:'League Stage',position:'6',captain:'Virat Kohli',coach:'Daniel Vettori',matches:'14',wl:'6-8-0',points:'12',topRuns:'Virat Kohli (530)',topWkts:'Umesh Yadav (20)',notes:''},
+      {year:2019,result:'League Stage',position:'8',captain:'Virat Kohli',coach:'Gary Kirsten',matches:'14',wl:'5-8-1',points:'11',topRuns:'Virat Kohli (464)',topWkts:'Yuzvendra Chahal (18)',notes:''},
+      {year:2020,result:'Playoffs',position:'4',captain:'Virat Kohli',coach:'Simon Katich',matches:'15',wl:'7-8-0',points:'14',topRuns:'Devdutt Padikkal (473)',topWkts:'Yuzvendra Chahal (21)',notes:''},
+      {year:2021,result:'Playoffs',position:'3',captain:'Virat Kohli',coach:'Simon Katich',matches:'15',wl:'9-6-0',points:'18',topRuns:'Glenn Maxwell (513)',topWkts:'Harshal Patel (32)',notes:''},
+      {year:2022,result:'Playoffs (Third Place)',position:'4',captain:'Faf du Plessis',coach:'Sanjay Bangar',matches:'16',wl:'9-7-0',points:'18',topRuns:'Faf du Plessis (468)',topWkts:'Wanindu Hasaranga (26)',notes:''},
+      {year:2023,result:'League Stage',position:'6',captain:'Faf du Plessis',coach:'Sanjay Bangar',matches:'14',wl:'7-7-0',points:'14',topRuns:'Faf du Plessis (730)',topWkts:'Mohammed Siraj (19)',notes:''},
+      {year:2024,result:'Playoffs',position:'4',captain:'Faf du Plessis',coach:'Andy Flower',matches:'15',wl:'7-8-0',points:'14',topRuns:'Virat Kohli (741)',topWkts:'Mohammed Siraj (15)',notes:'Qualified but knocked out'},
+      {year:2025,result:'Champions',position:'1',captain:'Rajat Patidar',coach:'Andy Flower',matches:'16',wl:'11-5-0',points:'22',topRuns:'Virat Kohli (657)',topWkts:'Josh Hazlewood (22)',notes:'🥇 First IPL title for RCB after 18 seasons'}
+    ];
+
+    function renderTable(data){
+      const tbody=document.getElementById('tbody');
+      tbody.innerHTML='';
+      data.forEach(row=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML=`
+          <td>${row.year}</td>
+          <td><span class="tag ${row.result.includes('Champion')?'champ':''}">${row.result}</span></td>
+          <td>${row.position}</td>
+          <td>${row.captain}</td>
+          <td>${row.coach}</td>
+          <td>${row.matches}</td>
+          <td>${row.wl}</td>
+          <td>${row.points}</td>
+          <td>${row.topRuns}</td>
+          <td>${row.topWkts}</td>
+          <td>${row.notes}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+    renderTable(baseData);
+
+    // Toolbar: search & filter
+    document.getElementById('search').addEventListener('input',e=>{
+      const q=e.target.value.toLowerCase();
+      renderTable(baseData.filter(r=>JSON.stringify(r).toLowerCase().includes(q)));
+    });
+    document.getElementById('resultFilter').addEventListener('change',e=>{
+      const v=e.target.value;
+      renderTable(v?baseData.filter(r=>r.result.includes(v)):baseData);
+    });
+
+    // Export CSV
+    document.getElementById('exportCSV').addEventListener('click',()=>{
+      const headers=Object.keys(baseData[0]);
+      const rows=baseData.map(r=>headers.map(h=>`"${r[h]}"`).join(','));
+      const csv=[headers.join(','),...rows].join('\\n');
+      const blob=new Blob([csv],{type:'text/csv'});
+      const a=document.createElement('a');
+      a.href=URL.createObjectURL(blob);
+      a.download='rcb_seasons.csv';
+      a.click();
+    });
+
+    // Export JSON
+    document.getElementById('exportJson').addEventListener('click',()=>{
+      const blob=new Blob([JSON.stringify(baseData,null,2)],{type:'application/json'});
+      const a=document.createElement('a');
+      a.href=URL.createObjectURL(blob);
+      a.download='rcb_seasons.json';
+      a.click();
+    });
+
+    // Import JSON
+    document.getElementById('importJson').addEventListener('click',()=>{
+      const inp=document.createElement('input');
+      inp.type='file';
+      inp.accept='.json,application/json';
+      inp.onchange=e=>{
+        const file=e.target.files[0];
+        const reader=new FileReader();
+        reader.onload=()=>{
+          try{const data=JSON.parse(reader.result);renderTable(data);}
+          catch(err){alert('Invalid JSON')}
+        };
+        reader.readAsText(file);
+      };
+      inp.click();
+    });
+
+    // Print
+    document.getElementById('printPage').addEventListener('click',()=>window.print());
+
+    // Scroll to table
+    document.getElementById('scrollToTable').addEventListener('click',()=>{
+      document.getElementById('records').scrollIntoView({behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>
